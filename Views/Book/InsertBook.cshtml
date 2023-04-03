@@ -1,0 +1,200 @@
+﻿
+<h2 style="margin-top:80px;margin-left:44.5%;font-weight:bold;">新增書籍</h2>
+
+<form id="InsertForm">
+    <div class="form-horizontal">
+        <hr />
+        <span id="notification"></span>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">書籍名稱</label>
+            <div class="col-md-10">
+                <div style="display:inline-block">
+                    <input class="form-control input-width" id="BookName" name="BookName" type="text" required validationMessage="請輸入書籍名稱" />
+                </div>
+                <div style="display:inline-block">
+                    <span data-for="BookName" class="k-invalid-msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">作者</label>
+            <div class="col-md-10">
+                <div style="display:inline-block">
+                    <input class="form-control input-width" id="BookAuthor" name="BookAuthor" type="text" required validationMessage="請輸入作者" />
+                </div>
+                <div style="display:inline-block">
+                    <span data-for="BookAuthor" class="k-invalid-msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">出版商</label>
+            <div class="col-md-10">
+                <div style="display:inline-block">
+                    <input class="form-control input-width" id="BookPublisher" name="BookPublisher" type="text" required validationMessage="請輸入出版商" />
+                </div>
+                <div style="display:inline-block">
+                    <span data-for="BookPublisher" class="k-invalid-msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">內容簡介<br><label style="color:red; font-size:12px; font-weight:400">限1000字</label></label>
+            <div class="col-md-10">
+                <div style="display:inline-table; vertical-align:middle">
+                    <textarea class="form-control input-width" id="BookNote" name="BookNote" required validationMessage="請輸入內容簡介" onkeyup="words_deal();"></textarea>
+                </div>
+                <div style="display:inline-table; vertical-align:middle">
+                    <span data-for="BookNote" class="k-invalid-msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">購買日期</label>
+            <div class="col-md-10">
+                <input class="form-control input-width" data-role="datepicker" data-type="date" id="BookBoughtDate" name="BookBoughtDate" type="text" required validationMessage="請輸入完整日期" />
+                <span data-for="BookBoughtDate" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <!--//TODO Coding 365 TODO UI 上的圖書類別無法選擇，請嘗試 Debug 是什麼地方出了問題      ok  -->   
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">圖書類別</label>
+            <div class="col-md-10">
+                <input class="form-control input-width" id="BookClassId" name="BookClassId" required validationMessage="請輸入書籍類別" />
+                <span data-for="BookClassId" class="k-invalid-msg"></span>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="form-group" style="margin-left:23%;">
+    <div class="col-md-offset-2 col-md-10" style="margin-left:35%">
+        <button class="btn btn-default" id="SaveInsert">存檔</button>
+        <button class="btn btn-default" id="CancelInsert">清空</button>
+    </div>
+</div>
+
+<footer>
+    <button class="btn btn-default" id="BacktoSearch">回到查詢</button>
+</footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //書籍類別的選單
+        GetDropDownList("BookClassId");
+
+        /*購書日期的DatePicker設定*/
+        $("#BookBoughtDate").kendoDatePicker({
+            format: "yyyy/MM/dd",
+            value: new Date(),
+            dateInput: true
+        });
+
+        /*新增成功或失敗的Notification*/
+        $("#notification").kendoNotification({
+            height: 70,
+            width: 180,
+            position: {
+                top: 100,
+                right: 30
+            },
+            autoHideAfter: 2000,
+            animation: {
+                open: {
+                    effects: "slideIn:down"
+                },
+                close: {
+                    effects: "slideIn:down",
+                    reverse: true
+                }
+            }
+        });
+
+        /*確認Insert表格有填完整*/
+        $("#InsertForm").kendoValidator();
+
+        /*在Insert頁面按存檔執行新增動作*/
+        $("#SaveInsert").kendoButton({
+            click: function () {
+                if ($("#InsertForm").kendoValidator().data("kendoValidator").validate()) {
+                    $.ajax({
+                        url: "/Book/InsertBook",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            BookName: encodeURIComponent($("#BookName").val()),
+                            BookAuthor: encodeURIComponent($("#BookAuthor").val()),
+                            BookPublisher: encodeURIComponent($("#BookPublisher").val()),
+                            BookNote: encodeURIComponent($("#BookNote").val()),
+                            BookBoughtDate: kendo.toString($("#BookBoughtDate").data("kendoDatePicker").value(), 'yyyy/MM/dd'),
+                            BookClassId: $("#BookClassId").data("kendoDropDownList").value()
+                        },
+                        success: function (response) {
+                            if (response == true) {
+                                $("#notification").data("kendoNotification").show("新增成功", "success");
+                                //清空表單
+                                ClearInsertForm();
+                            }
+                            else {
+                                $("#notification").data("kendoNotification").show("新增失敗", "error");
+                            }
+                        },
+                        error: function () {
+                            $("#notification").data("kendoNotification").show("系統發生錯誤", "error");
+                        }
+                    });
+                }
+            }
+        });
+
+        /*取消新增*/
+        $("#CancelInsert").kendoButton({
+            click: function () {
+                ClearInsertForm();
+            }
+        });
+    });
+
+    function ClearInsertForm() {
+        $("#BookName").val("");
+        $("#BookAuthor").val("");
+        $("#BookPublisher").val("");
+        $("#BookNote").val("");
+        $("#BookClassId").data("kendoDropDownList").select(0);
+    }
+
+    /*DropDownList重複出現抽成function*/
+    function GetDropDownList(typename) {
+        $("#" + typename).kendoDropDownList({
+            optionLabel: "請選擇...",
+            dataTextField: "Text",
+            dataValueField: "Value",
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Book/GetDropDownListData",   //要連結到Controller的GetDropDownListData
+                        type: "post",
+                        dataType: "json",
+                        data: { category: typename }
+                    }
+                }
+            }
+        });
+    }
+
+    /*限制內容簡介字數 不能超過資料庫開的大小*/
+    function words_deal() {
+        var curLength = $("#BookNote").val().length;
+        if (curLength > 1000) {
+            var num = $("#BookNote").val().substr(0, 1000);
+            $("#BookNote").val(num);
+            alert("超過字數限制，多出的字將被截斷！");
+        }
+    }
+</script> 

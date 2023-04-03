@@ -1,0 +1,322 @@
+﻿
+<h2 style="margin-top:80px;margin-left:44.5%;font-weight:bold;">修改書籍</h2>
+
+<form id="UpdateForm">
+    <div class="form-horizontal">
+        <hr />
+        <span id="notification"></span>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">書籍名稱</label>
+            <div class="col-md-10">
+                <div style="display: inline-block">
+                    <input class="form-control input-width" id="BookName" name="BookName" type="text" required validationMessage="請輸入書籍名稱" />
+                </div>
+                <span data-for="BookName" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">作者</label>
+            <div class="col-md-10">
+                <div style="display: inline-block">
+                    <input class="form-control input-width" id="BookAuthor" name="BookAuthor" type="text" required validationMessage="請輸入作者" />
+                </div>
+                <span data-for="BookAuthor" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">出版商</label>
+            <div class="col-md-10">
+                <div style="display: inline-block">
+                    <input class="form-control input-width" id="BookPublisher" name="BookPublisher" type="text" required validationMessage="請輸入出版商" />
+                </div>
+                <span data-for="BookPublisher" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">購買日期</label>
+            <div class="col-md-10">
+                <input class="form-control input-width" id="BookBoughtDate" name="BookBoughtDate" type="text" required validationMessage="請輸入購買日期" />
+                <span data-for="BookBoughtDate" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">內容簡介</label>
+            <div class="col-md-10">
+                <div style="display: inline-block">
+                    <textarea class="form-control input-width" id="BookNote" name="BookNote" required validationMessage="請輸入內容簡介"></textarea>
+                </div>
+                <span data-for="BookNote" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">書籍類別</label>
+            <div class="col-md-10">
+                <input class="form-control input-width" id="BookClassId" name="BookClassId" required validationMessage="請輸入書籍類別" />
+                <span data-for="BookClassId" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2 required">借閱狀態</label>
+            <div class="col-md-10">
+                <input class="form-control input-width" id="BookStatusId" name="BookStatusId" required validationMessage="請輸入借閱狀態" />
+                <span data-for="BookStatusId" class="k-invalid-msg"></span>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left:23%;">
+            <label class="control-label col-md-2">借閱人</label>
+            <div class="col-md-10">
+                <input class="form-control input-width" id="BookKeeperId" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="form-group" style="margin-left:23%;">
+    <div class="col-md-offset-2 col-md-10" style="margin-left:35%">
+        <button class="btn btn-default" id="SaveUpdate">存檔</button>
+        <button class="btn btn-default" id="DeleteBook">刪除</button>
+    </div>
+</div>
+
+<div id="MakeSureWindow" style="display: none">
+    <p style="text-align:center;">確定要刪除嗎？</p>
+    <div style="margin-left:9%;">
+        <button id="DeleteinUpdateYES">確定</button>
+        <button id="NO">取消</button>
+    </div>
+</div>
+
+<footer>
+    <button class="btn btn-default" id="BacktoSearch">回到查詢</button>
+</footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //書籍類別的選單
+        GetDropDownList("BookClassId");
+        //借閱人的選單
+        GetDropDownList("BookKeeperId");
+        //書籍狀態的選單
+        GetDropDownList("BookStatusId");
+
+        /*購書日期的DatePicker設定*/
+        $("#BookBoughtDate").kendoDatePicker({
+            format: "yyyy/MM/dd",
+            value: new Date(),
+            dateInput: true
+        });
+
+        /*新增成功或失敗的Notification*/
+        $("#notification").kendoNotification({
+            height: 70,
+            width: 180,
+            position: {
+                top: 100,
+                right: 30
+            },
+            autoHideAfter: 2000,
+            animation: {
+                open: {
+                    effects: "slideIn:down"
+                },
+                close: {
+                    effects: "slideIn:down",
+                    reverse: true
+                }
+            }
+        });
+
+        /* 確認是否刪除的視窗 */
+        $("#MakeSureWindow").kendoWindow({
+            width: "200px",
+            title: "確認刪除",
+            modal: true
+        });
+
+        /*按下將不執行刪除動作 */
+        $("#NO").kendoButton({
+            click: function () {
+                //把確認視窗關掉
+                $("#MakeSureWindow").data("kendoWindow").close();
+            }
+        });
+
+        /*在Update頁面的刪除鍵 會打開確認視窗*/
+        $("#DeleteBook").kendoButton({
+            click: function () {
+                var BookStatus = $("#BookStatusId").data("kendoDropDownList").value();
+                //是A-可借閱以及U-不可借閱才能刪
+                if (BookStatus == "A" || BookStatus == "U") {
+                    $("#MakeSureWindow").data("kendoWindow").center().open();
+                }
+                else if (BookStatus == "B" || BookStatus == "C") {
+                    $("#notification").data("kendoNotification").show("已借出，無法刪除", "info");
+                }
+            }
+        });
+
+        /*在Update裡面的刪除確定鍵*/
+        $("#DeleteinUpdateYES").kendoButton({
+            click: function () {
+                $.ajax({
+                    url: "/Book/DeleteBook",
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        BookId: GetId()
+                    },
+                    success: function (response) {
+                        if (response == true) {
+                            $("#notification").data("kendoNotification").show("刪除成功", "success");
+                            //隔一秒後跳轉頁面
+                            setTimeout(function () {
+                                window.location.href = "/Book/SearchBook";
+                            }, 1000);
+                        }
+                        else {
+                            $("#notification").data("kendoNotification").show("已借出，無法刪除", "error");
+                        }
+                    },
+                    error: function () {
+                        $("#notification").data("kendoNotification").show("系統發生錯誤", "error");
+                    }
+                });
+                $("#MakeSureWindow").data("kendoWindow").close();
+            }
+        });
+
+        /*確認Update表格有填完整*/
+        $("#UpdateForm").kendoValidator();
+
+        /*在Update頁面按存檔執行修改動作*/
+        $("#SaveUpdate").kendoButton({
+            click: function () {
+                var validatable = $("#UpdateForm").kendoValidator().data("kendoValidator");
+                if (validatable.validate()) {
+                    $.ajax({
+                        url: "/Book/UpdateBook",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            BookId: GetId(),
+                            BookName: encodeURIComponent($("#BookName").val()),//特殊符號編碼
+                            BookAuthor: encodeURIComponent($("#BookAuthor").val()),
+                            BookPublisher: encodeURIComponent($("#BookPublisher").val()),
+                            BookNote: encodeURIComponent($("#BookNote").val()),
+                            BookBoughtDate: kendo.toString($("#BookBoughtDate").data("kendoDatePicker").value(), 'yyyy/MM/dd'),
+                            BookClassId: $("#BookClassId").data("kendoDropDownList").value(),
+                            BookStatusId: $("#BookStatusId").data("kendoDropDownList").value(),
+                            BookKeeperId: $("#BookKeeperId").data("kendoDropDownList").value()
+                        },
+                        success: function (response) {
+                            if (response) {
+                                $("#notification").data("kendoNotification").show("修改成功", "success");
+                                //隔一秒後跳轉頁面
+                                setTimeout(function () {
+                                    window.location.href = "/Book/DetailBook?BookId=" + GetId();
+                                }, 1000);
+                            }
+                            else {
+                                //選擇已借出可是沒選借閱人
+                                $("#notification").data("kendoNotification").show("請選借閱人", "info");
+                            }
+                        },
+                        error: function () {
+                            $("#notification").data("kendoNotification").show("系統發生錯誤", "error");
+                            window.location.href = '/Book/DetailBook?BookId=' + GetId();
+                        }
+                    });
+                }
+            }
+        });
+
+        // 取得待編輯書籍的資料
+        LoadBookData();
+
+        // 變更書籍狀態啟動規則設定
+        $("#BookStatusId").data("kendoDropDownList").bind("change", ChangeStatus);
+    });
+
+    function LoadBookData() {
+
+        kendo.ui.progress.($(document.body), true);
+
+        $.ajax({
+            url: "/Book/DetailBook",
+            type: "post",
+            data: { BookId: GetId() },
+            dataType: "json",
+            success: function (Book) {
+                $("#BookName").val(Book.BookName);
+                $("#BookAuthor").val(Book.BookAuthor);
+                $("#BookPublisher").val(Book.BookPublisher);
+                $("#BookBoughtDate").data("kendoDatePicker").value(Book.BookBoughtDate);
+                $("#BookNote").val(Book.BookNote);
+                $("#BookClassId").data("kendoDropDownList").value(Book.BookClassId);
+                $("#BookKeeperId").data("kendoDropDownList").value(Book.BookKeeperId);
+                $("#BookStatusId").data("kendoDropDownList").value(Book.BookStatusId);
+
+                var Bookstatus = $("#BookStatusId").data("kendoDropDownList").value();
+                if (Bookstatus == "A" || Bookstatus == "U") {
+                    $("#BookKeeperId").data("kendoDropDownList").readonly();
+                }
+            },
+            error: function () {
+                $("#notification").data("kendoNotification").show("系統發生錯誤", "error");
+            }
+        });
+    }
+
+    /*取得BookId*/
+    function GetId() {
+        //取得url參數字串
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        return urlParams.get('BookId');
+    }
+
+    /*設定狀態規則*/
+    function ChangeStatus() {
+        var status = $("#BookStatusId").data("kendoDropDownList").value();
+
+        //A-可以借閱 U-不可借閱 清空借閱人 唯讀(readonly)
+        //B-已借閱 C-已借未領 借閱人可選
+
+        //TODO Coding 365 TODO 填入正確的邏輯，檢查借閱狀態與借閱人的關係  ok
+        if (status == "A" || status == "U") {
+            $("#BookKeeperId").data("kendoDropDownList").select(0);   //select第一筆"請選擇" -> 清空借閱人
+            $("#BookKeeperId").data("kendoDropDownList").readonly();
+        }
+        else if (status == "B" || status == "C") {
+            $("#BookKeeperId").data("kendoDropDownList").readonly(false);
+        }
+    }
+    //-------------------------------------------------------------------------
+
+    /*DropDownList重複出現抽成function*/
+    function GetDropDownList(typename) {
+        $("#" + typename).kendoDropDownList({
+            optionLabel: "請選擇...",
+            dataTextField: "Text",
+            dataValueField: "Value",
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Book/GetDropDownListData",
+                        type: "post",
+                        dataType: "json",
+                        data: { category: typename }
+                    }
+                }
+            }
+        });
+    }
+</script>

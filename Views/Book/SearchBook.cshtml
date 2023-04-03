@@ -1,0 +1,341 @@
+﻿
+<h2 style="margin-top:80px;margin-left:44.5%;font-weight:bold;">查詢書籍</h2>
+
+<div class="form-horizontal">
+    <hr />
+    <span id="notification"></span>
+
+    <div class="form-group" style="margin-left:23%;">
+        <label class="control-label col-md-2">書籍名稱</label>
+        <div class="col-md-10">
+            <input class="form-control input-width" id="BookName" name="BookName" type="text" />
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-left:23%;">
+        <label class="control-label col-md-2">圖書類別</label>
+        <div class="col-md-10">
+            <input class="form-control input-width" id="BookClassId" />
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-left:23%;">
+        <label class="control-label col-md-2">借閱人</label>
+        <div class="col-md-10">
+            <input class="form-control input-width" id="BookKeeperId" />
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-left:23%;">
+        <label class="control-label col-md-2">借閱狀態</label>
+        <div class="col-md-10">
+            <input class="form-control input-width" id="BookStatusId" />
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-left:23%;">
+        <div class="col-md-offset-2 col-md-10" style="margin-left:22%;">
+            <button class="btn btn-default" id="SearchBook">查詢</button>
+            <button class="btn btn-default" id="ClearSearch">清除</button>
+            <button class="btn btn-default" id="InsertBook">新增</button>
+        </div>
+    </div>
+
+    <div id="ForGrid">
+        <div id="BookGrid"></div>
+    </div>
+
+</div>
+<div id="LendRecordWindow" style="display: none">
+    <!-- 視窗才不會一開始就出現 -->
+    <div id="LendRecordGridInSearch">
+    </div>
+</div>
+
+<div id="MakeSureWindow" style="display: none;">
+    <p style="text-align:center;">確定要刪除嗎？</p>
+    <div style="margin-left:9%;">
+        <button id="DeleteinSearchYES">確定</button>
+        <button id="NO">取消</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //const { placeholder } = require("modernizr");
+
+    $(document).ready(function () {
+        //書籍類別的選單
+        GetDropDownList("BookClassId");
+        //借閱人的選單
+        GetDropDownList("BookKeeperId");
+
+        //書籍狀態的選單
+        //TODO Coding 365 TODO 書籍狀態資料來源，利用此頁現有方法，改從後端來   ok
+        $("#BookStatusId").kendoDropDownList({
+            optionLabel: "請選擇...",
+            dataTextField: "Text",
+            dataValueField: "Value",
+            dataSource:
+                //[{ "Text": "可以借出", "Value": "A" },
+                //{ "Text": "已借出", "Value": "B" },
+                //{ "Text": "不可借出", "Value": "U" },
+                //{ "Text": "已借出(未領)", "Value": "C" }]
+            {
+                transport: {
+                    read: {
+                        url: "/Book/GetDropDownListData?category=BookStatusId" ,
+                        dataType: "json",
+                        type: "post"
+                    }
+                }
+            }
+        });
+
+        //自動完成書名
+        $("#BookName").kendoAutoComplete({
+            //TODO Coding 365 TODO 完成 AutoComplete(後端 Controller 已有方法取得所有書名) ok
+            //placeholder: 提示字串   filter: 過濾規則
+            placeholder: "Select BookName...",  
+            filter: "contains",    
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Book/AutoCompleteBookName",
+                        dataType: "json",
+                        type: "post"
+                    }
+                }
+            }
+            
+        });
+        //------------------------------------------------------------
+
+        $("#BookGrid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Book/SearchBook",
+                        type: "post",
+                        dataType: "json",
+                        data: function () {
+                            return {
+                                BookName: $("#BookName").val(),
+                                BookClassId: $("#BookClassId").data("kendoDropDownList").value(),
+                                BookKeeperId: $("#BookKeeperId").data("kendoDropDownList").value(),
+                                BookStatusId: $("#BookStatusId").data("kendoDropDownList").value()
+                            }
+                        }
+                    }
+                },
+                pageSize: 20
+            },
+            height: 550,
+            sortable: true,
+            pageable: {
+                input: true,
+                numeric: false
+            },
+            columns: [
+                { field: "BookClassName", title: "圖書類別", width: "20%" },
+                { field: "BookName", title: "圖書名稱", width: "40%", template: '<a href="/Book/DetailBook?BookId=#=BookId#">#=BookName#</a>' },
+                { field: "BookBoughtDate", title: "購書日期", width: "13%" },
+                { field: "BookStatusName", title: "借閱狀態", width: "11.5%" },
+                { field: "BookKeeperEName", title: "借閱人", width: "10%" },
+                { command: { text: "借閱紀錄", click: LendRecordInSearch }, title: " ", width: "100px" },
+                { command: { text: "編輯", click: EditBook }, title: " ", width: "100px" },
+                { command: { text: "刪除", click: Delete }, title: " ", width: "100px" }
+            ]
+        });
+
+        /*新增成功或失敗的Notification*/
+        $("#notification").kendoNotification({
+            height: 70,
+            width: 180,
+            position: {
+                top: 100,
+                right: 30
+            },
+            autoHideAfter: 2000,
+            animation: {
+                open: {
+                    effects: "slideIn:down"
+                },
+                close: {
+                    effects: "slideIn:down",
+                    reverse: true
+                }
+            }
+        });
+
+        /* 確認是否刪除的視窗 */
+        $("#MakeSureWindow").kendoWindow({
+            width: "200px",
+            title: "確認刪除",
+            modal: true
+        });
+
+        /*按下將不執行刪除動作 */
+        $("#NO").kendoButton({
+            click: function () {
+                //把確認視窗關掉
+                $("#MakeSureWindow").data("kendoWindow").close();
+            }
+        });
+
+        /*查詢書籍*/
+        $("#SearchBook").kendoButton({
+            click: SearchBook
+        });
+
+        /*清空查詢表單*/
+        $("#ClearSearch").kendoButton({
+            click: function () {
+                $("#BookName").val("");
+                $("#BookClassId").data("kendoDropDownList").select(0);
+                $("#BookKeeperId").data("kendoDropDownList").select(0);
+                $("#BookStatusId").data("kendoDropDownList").select(0);
+            }
+        });
+
+        /*進入新增頁面*/
+        $("#InsertBook").kendoButton({
+            click: function () {
+                window.location.href = '/Book/InsertBook';
+            }
+        });
+
+        /* 借閱紀錄的視窗 */
+        $("#LendRecordWindow").kendoWindow({
+            width: "50%",
+            height: "90%",
+            title: "借閱紀錄",
+            modal: true
+        });
+
+        /*在Search裡面的刪除確定鍵*/
+        $("#DeleteinSearchYES").kendoButton({
+            click: function () {
+                $.ajax({
+                    url: "/Book/DeleteBook",
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        BookId: BookData.BookId
+                    },
+                    success: function (response) {
+                        if (response == true) {
+                            $("#BookGrid").data("kendoGrid").dataSource.data().remove(BookData);
+                            $("#notification").data("kendoNotification").show("刪除成功", "success");
+                        }
+                        else {
+                            $("#notification").data("kendoNotification").show("已借出，無法刪除", "error");
+                        }
+                    },
+                    error: function () {
+                        $("#notification").data("kendoNotification").show("系統發生錯誤", "error");
+                    }
+                });
+                $("#MakeSureWindow").data("kendoWindow").close();
+            }
+        });
+    });
+
+    /*搜尋功能*/
+    function SearchBook() {
+        $('#BookGrid').data('kendoGrid').dataSource.read();
+    }
+
+    /*Grid的編輯動作*/
+    function EditBook(e) {
+        e.preventDefault();
+        var BookData = this.dataItem($(e.target).closest("tr"));
+        window.location.href = '/Book/UpdateBook?BookId=' + BookData.BookId;
+    }
+
+    /*Grid的刪除鍵 會打開確認視窗*/
+    function Delete(e) {
+        e.preventDefault();
+        // Global Varibale
+        BookData = this.dataItem($(e.target).closest("tr"));
+        $.ajax({
+            url: "/Book/CheckBookStatus",
+            type: "post",
+            dataType: "json",
+            data: {
+                BookId: BookData.BookId
+            },
+            success: function (response) {
+                if (response == true) {
+                    $("#MakeSureWindow").data("kendoWindow").center().open();
+                }
+                else if (response == false) {
+                    SearchBook();//另開的視窗可能已將書籍刪掉，重load一次更新資料
+                    $("#notification").data("kendoNotification").show("已被借出，無法刪除", "error");
+                }
+                else {
+                    SearchBook();
+                    $("#notification").data("kendoNotification").show("此書已不存在", "error");
+                }
+            },
+            error: function () {
+                $("#notification").data("kendoNotification").show("系統發生錯誤", "error");
+            }
+        });
+    }
+
+    /*Grid的借閱紀錄鍵 會打開借閱紀錄視窗*/
+    function LendRecordInSearch(e) {
+        e.preventDefault();
+        var BookIChoose = this.dataItem($(e.target).closest("tr"));
+        $("#LendRecordWindow").data("kendoWindow").center().open();
+        $("#LendRecordGridInSearch").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Book/LendRecord",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            BookId: BookIChoose.BookId
+                        }
+                    }
+                },
+                pageSize: 20
+            },
+            height: 480,
+            sortable: true,
+            pageable: {
+                input: true,
+                numeric: false
+            },
+            noRecords: {
+                template: "尚無借閱紀錄"
+            },
+            columns: [
+                { field: "LendDate", title: "借閱日期", width: "25%" },
+                { field: "BookKeeperId", title: "借閱人員編號", width: "25%" },
+                { field: "BookKeeperEName", title: "英文姓名", width: "25%" },
+                { field: "BookKeeperCName", title: "中文姓名", width: "25%" }
+            ]
+        });
+    }
+
+    /*DropDownList重複出現抽成function*/
+    function GetDropDownList(typename) {
+        $("#" + typename).kendoDropDownList({
+            optionLabel: "請選擇...",
+            dataTextField: "Text",
+            dataValueField: "Value",
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Book/GetDropDownListData",
+                        type: "post",
+                        dataType: "json",
+                        data: { category: typename }
+                    }
+                }
+            }
+        });
+    }
+</script>

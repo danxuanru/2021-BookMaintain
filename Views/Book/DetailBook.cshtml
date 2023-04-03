@@ -1,0 +1,201 @@
+﻿
+<h2 style="margin-top:80px;margin-left:15%;font-weight:bold;">書籍明細</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left:5%;">
+        <dt>
+            <label>書籍名稱</label>
+        </dt>
+        <dd>
+            <label id="BookName"></label>
+        </dd>
+
+        <dt>
+            <label>書籍類別</label>
+        </dt>
+        <dd>
+            <label id="BookClassName"></label>
+        </dd>
+
+        <dt>
+            <label>作者</label>
+        </dt>
+        <dd>
+            <label id="BookAuthor"></label>
+        </dd>
+
+        <dt>
+            <label>購買日期</label>
+        </dt>
+        <dd>
+            <label id="DetailBookBoughtDate"></label>
+        </dd>
+
+        <dt>
+            <label>出版商</label>
+        </dt>
+        <dd>
+            <label id="BookPublisher"></label>
+        </dd>
+
+        <dt>
+            <label>書籍簡介</label>
+        </dt>
+        <dd>
+            <label id="BookNote"></label>
+        </dd>
+
+        <dt>
+            <label>借閱狀態</label>
+        </dt>
+        <dd>
+            <label id="BookStatusName"></label>
+        </dd>
+
+        <dt>
+            <label>借閱人</label>
+        </dt>
+        <dd>
+            <label id="BookKeeperEName"></label>
+        </dd>
+
+        <dt>
+            <label>新增日期</label>
+        </dt>
+        <dd>
+            <label id="CreateDate"></label>
+        </dd>
+
+        <dt>
+            <label>最後修改日期</label>
+        </dt>
+        <dd>
+            <label id="ModifyDate"></label>
+        </dd>
+    </dl>
+</div>
+<div id="LendRecordWindow" style="display: none">
+    <!-- 視窗才不會一開始就出現 -->
+    <div id="LendRecordGrid"></div>
+</div>
+
+<p style="margin-left:45%;">
+    <button class="btn btn-default" id="UpdateBook">修改</button>
+    <button class="btn btn-default" id="LendRecord">借閱紀錄</button>
+</p>
+
+<hr />
+<footer>
+    <button class="btn btn-default" id="BacktoSearch">回到查詢</button>
+</footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*進入修改畫面*/
+        $("#UpdateBook").kendoButton({
+            click: function () {
+                //TODO Coding 365 TODO 明細畫面想要可以直接連到修改畫面
+                window.location.href = '/Book/UpdateBook?BookId=' + GetId();
+                //執行後修改畫面內容是空的??
+
+            }
+        });
+
+        /* 借閱紀錄的視窗 */
+        $("#LendRecordWindow").kendoWindow({
+            width: "50%",
+            height: "90%",
+            title: "借閱紀錄",
+            modal: true
+        });
+
+        /* 打開借閱紀錄視窗*/
+        $("#LendRecord").kendoButton({
+            click: function () {
+                $("#LendRecordWindow").data("kendoWindow").center().open();
+            }
+        });
+
+        /*借閱紀錄的Grid*/
+        $("#LendRecordGrid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "/Book/LendRecord",
+                        type: "post",
+                        dataType: "json",
+                        data: {
+                            BookId: GetId()
+                        }
+                    }
+                },
+                pageSize: 20
+            },
+            height: 480,
+            sortable: true,
+            pageable: {
+                input: true,
+                numeric: false
+            },
+            noRecords: {
+                template: "尚無借閱紀錄"
+            },
+            columns: [
+                { field: "LendDate", title: "借閱日期", width: "25%" },
+                { field: "BookKeeperId", title: "借閱人員編號", width: "25%" },
+                { field: "BookKeeperEName", title: "英文姓名", width: "25%" },
+                { field: "BookKeeperCName", title: "中文姓名", width: "25%" }
+            ]
+        });
+
+        /*載入書本資料*/
+        LoadBookDetailData();
+    });
+
+    /*取得BookId*/
+    function GetId() {
+        //取得url參數字串
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        return urlParams.get('BookId');
+    }
+
+    // 抓書籍資料
+    function LoadBookDetailData() {
+        //TODO Coding 365 TODO 發出 Ajax 取得書本明細資料  ok
+        $.ajax({
+            // 此處填入合理程式碼
+            // ...
+
+            type: "post",
+            url: "/Book/DetailBook?bookId=" + GetId(),
+            //data: { bookId: GetId() }
+            dataType: "json",
+
+
+            // 此處不用改動
+            success: function (Book) {
+                // callback
+                BindBookData(Book);
+            },
+            error: function () {
+                $("#notification").data("kendoNotification").show("系統發生錯誤", "error");
+            }
+        });
+    }
+
+    // 把取回的資料 set 到畫面上
+    function BindBookData(Book) {
+        $("#BookName").text(Book.BookName);
+        $("#BookAuthor").text(Book.BookAuthor);
+        $("#BookPublisher").text(Book.BookPublisher);
+        $("#DetailBookBoughtDate").text(Book.BookBoughtDate);
+        $("#BookNote").text(Book.BookNote);
+        $("#BookClassName").text(Book.BookClassName);
+        $("#BookKeeperEName").text(Book.BookKeeperEName);
+        $("#BookStatusName").text(Book.BookStatusName);
+        $("#CreateDate").text(Book.CreateDate);
+        $("#ModifyDate").text(Book.ModifyDate);
+    }
+</script>
