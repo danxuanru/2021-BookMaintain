@@ -1,0 +1,9 @@
+﻿.required:before {
+    content: "*";
+    font-weight: bold;
+    color: red;
+}
+
+.k-tooltip-validation{
+    width:130px;
+}
