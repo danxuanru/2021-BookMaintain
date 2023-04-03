@@ -1,0 +1,150 @@
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\BookMaintain.dll.config
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\BookMaintain.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\BookMaintain.pdb
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Helpers.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Mvc.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Razor.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Deployment.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Razor.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Razor.xml
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.xml
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Deployment.xml
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Razor.xml
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Helpers.xml
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Mvc.xml
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.csproj.AssemblyReference.cache
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.csproj.CoreCompileInputs.cache
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.csproj.CopyComplete
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.pdb
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csc.exe
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csc.exe.config
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csc.rsp
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csi.exe
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csi.exe.config
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csi.rsp
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.AppContext.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Console.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.Compression.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.Pipes.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Claims.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.ValueTuple.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.XPath.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\vbc.exe
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\vbc.exe.config
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\vbc.rsp
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\VBCSCompiler.exe
+C:\Users\88692\Desktop\coding365\進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\BookMaintain.dll.config
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\BookMaintain.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\BookMaintain.pdb
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csc.exe
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csc.exe.config
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csc.rsp
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csi.exe
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csi.exe.config
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\csi.rsp
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.AppContext.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Console.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.Compression.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.IO.Pipes.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Claims.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.ValueTuple.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.XPath.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\vbc.exe
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\vbc.exe.config
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\vbc.rsp
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\VBCSCompiler.exe
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Helpers.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Mvc.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Razor.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Deployment.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Razor.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Razor.xml
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.xml
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Deployment.xml
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Webpages.Razor.xml
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Helpers.xml
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\System.Web.Mvc.xml
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Webpages.resources.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Webpages.Deployment.resources.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.csproj.AssemblyReference.cache
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.csproj.CoreCompileInputs.cache
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.csproj.CopyComplete
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.dll
+C:\Users\88692\OneDrive - 國立中正大學\桌面\coding365\2021 進階 A組\Course 5  Front End Advanced\WorkShop\WorkShop\BookMaintain\obj\Debug\BookMaintain.pdb
